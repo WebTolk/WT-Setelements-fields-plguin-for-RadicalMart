@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ @package    Fields - WT RadicalMart Fields Set Elements
+  ~ @version   1.0.0
+  ~ @author     Sergey Tolkachyov and Sergey Sergevnin
+  ~ @copyright Copyright (c) 2025 Sergey Tolkachyov and Sergey Sergevnin. All rights reserved.
+  ~ @license   GNU/GPL3 http://www.gnu.org/licenses/gpl-3.0.html
+  ~ @link       https://web-tolk.ru
+  -->
+
+<form>
+    <fieldset name="content">
+        <fields name="params">
+            <field name="multiple" type="list"
+                   label="PLG_WTSETELEMENTS_MULTIPLE"
+                   default="0">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field type="radio"
+                   name="select_view"
+                   label="PLG_WTSETELEMENTS_LISTVIEW_LABEL"
+                   description="PLG_WTSETELEMENTS_LISTVIEW_DESC"
+                   default="standard"
+                   class="btn-group"
+            >
+                <option value="standard">PLG_WTSETELEMENTS_LISTVIEW_STANDARD</option>
+                <option value="fancy_select">PLG_WTSETELEMENTS_LISTVIEW_FANCY_SELECT</option>
+            </field>
+        </fields>
+        <field name="options" type="subform"
+               label="PLG_WTSETELEMENTS_OPTIONS"
+               multiple="true"
+               layout="joomla.form.field.subform.repeatable-table"
+               min="1"
+               max="1000000"
+               parentclass="stack"
+               groupByFieldset="true"
+               required="true">
+            <form>
+                <fieldset name="first">
+                    <field name="text"
+                           type="text"
+                           label="PLG_WTSETELEMENTS_FIELDTEXT_LABEL"
+                           hint="PLG_WTSETELEMENTS_FIELDTEXT_LABEL"
+                           class="form-control-sm"
+                           required="true"/>
+                    <field name="value" type="text"
+                           label="PLG_WTSETELEMENTS_FIELDVALUE_LABEL"
+                           hint="PLG_WTSETELEMENTS_FIELDVALUE_LABEL"
+                           class="form-control-sm"
+                           required="true"
+                    />
+                    <field name="desctext" type="textarea"
+                           label="PLG_WTSETELEMENTS_FIELDDESCRIPTION_LABEL"
+                           rows="4"
+                           class="form-control-sm fs-5"
+                    />
+                </fieldset>
+                <fieldset name="image">
+                    <field name="image" type="media"
+                           label="PLG_WTSETELEMENTS_FIELDIMAGE_LABEL"
+                           class="form-control-sm"
+                           preview="true"/>
+                </fieldset>
+            </form>
+        </field>
+    </fieldset>
+    <fieldset name="display_products" label="COM_RADICALMART_PARAMS_FIELD_DISPLAY_PRODUCTS">
+        <fields name="params">
+            <field name="display_products" type="radio"
+                   label="COM_RADICALMART_PARAMS_FIELD_DISPLAY_SELECT"
+                   class="btn-group btn-group-yesno"
+                   default="1">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field
+                    name="display_products_as"
+                    type="filelist"
+                    default="default"
+                    label="PLG_WTSETELEMENTS_LAYOUT_LABEL"
+                    description="PLG_WTSETELEMENTS_DESC_USELAYOUTS"
+                    directory="layouts/plugins/radicalmart_fields/wtsetelements"
+                    fileFilter="\.php$"
+                    stripext="true"
+                    hide_none="true"
+                    hide_default="true"
+            />
+            <field
+                    name="display_products_as_note"
+                    type="note"
+                    class="alert alert-info"
+                    label="PLG_WTSETELEMENTS_DISPLAY_PRODUCTS_AS_NOTE_LABEL"
+                    description="PLG_WTSETELEMENTS_DISPLAY_PRODUCTS_AS_NOTE_DESC"
+            />
+        </fields>
+    </fieldset>
+    <fieldset name="display_product" label="COM_RADICALMART_PARAMS_FIELD_DISPLAY_PRODUCT">
+        <fields name="params">
+            <field name="display_product" type="radio"
+                   label="COM_RADICALMART_PARAMS_FIELD_DISPLAY_SELECT"
+                   class="btn-group btn-group-yesno"
+                   default="1">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field
+                    name="display_product_as"
+                    type="filelist"
+                    default="default"
+                    label="PLG_WTSETELEMENTS_LAYOUT_LABEL"
+                    description="PLG_WTSETELEMENTS_DESC_USELAYOUTS"
+                    directory="layouts/plugins/radicalmart_fields/wtsetelements"
+                    fileFilter="\.php$"
+                    stripext="true"
+                    hide_none="true"
+                    hide_default="true"
+            />
+        </fields>
+    </fieldset>
+</form>

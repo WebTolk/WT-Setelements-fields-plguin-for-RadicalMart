@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="radicalmart_fields" method="upgrade">
+	<name>PLG_WTSETELEMENTS</name>
+    <author>Sergey Tolkachyov and Sergey Sergevnin</author>
+    <creationDate>16.09.2025</creationDate>
+    <authorEmail>info@web-tolk.ru</authorEmail>
+    <authorUrl>https://web-tolk.ru</authorUrl>
+    <copyright>Copyright (c) 2025 Sergey Tolkachyov and Sergey Sergevnin. All rights reserved.</copyright>
+    <license>>GNU GPL 3.0</license>
+    <version>1.0.0</version>
+    <description>PLG_WTSETELEMENTS_DESC</description>
+	<namespace path="src">Joomla\Plugin\RadicalMartFields\Wtsetelements</namespace>
+	<scriptfile>script.php</scriptfile>
+
+	<!-- Language files -->
+	<languages folder="language">
+		<language tag="en-GB">en-GB/plg_radicalmart_fields_wtsetelements.ini</language>
+		<language tag="en-GB">en-GB/plg_radicalmart_fields_wtsetelements.sys.ini</language>
+		<language tag="ru-RU">ru-RU/plg_radicalmart_fields_wtsetelements.ini</language>
+		<language tag="ru-RU">ru-RU/plg_radicalmart_fields_wtsetelements.sys.ini</language>
+	</languages>
+
+	<!-- Plagin Info -->
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field addfieldprefix="Joomla\Plugin\RadicalMartFields\Wtsetelements\Fields"
+					   type="plugininfo"
+					   name="plugininfo"/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Files -->
+	<files>
+		<folder>forms</folder>
+		<folder>services</folder>
+		<folder plugin="wtsetelements">src</folder>
+	</files>
+
+	<!-- Layouts files -->
+	<layouts destination="plugins/radicalmart_fields/wtsetelements" folder="layouts">
+		<filename>bootstrap5-cards.php</filename>
+		<filename>default.php</filename>
+	</layouts>
+	<updateservers>
+		<server type="extension" priority="1" name="WT Set elements updates">https://web-tolk.ru/component/swjprojects/jupdate?element=wtsetelements</server>
+	</updateservers>
+	<changelogurl>https://web-tolk.ru/jchangelog?element=wtsetelements</changelogurl>
+</extension>
