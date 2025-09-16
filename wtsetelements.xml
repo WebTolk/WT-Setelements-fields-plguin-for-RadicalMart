@@ -2,7 +2,7 @@
 <extension type="plugin" group="radicalmart_fields" method="upgrade">
 	<name>PLG_WTSETELEMENTS</name>
     <author>Sergey Tolkachyov and Sergey Sergevnin</author>
-    <creationDate>September, 2025</creationDate>
+    <creationDate>16.09.2025</creationDate>
     <authorEmail>info@web-tolk.ru</authorEmail>
     <authorUrl>https://web-tolk.ru</authorUrl>
     <copyright>Copyright (c) 2025 Sergey Tolkachyov and Sergey Sergevnin. All rights reserved.</copyright>

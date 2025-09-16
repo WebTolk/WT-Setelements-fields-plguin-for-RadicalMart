@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ @package   Fields - WT RadicalMart Fields Set Elements
+  ~ @package    Fields - WT RadicalMart Fields Set Elements
   ~ @version   1.0.0
-  ~ @author    Sergey Tolkachyov and Sergey Sergevnin - https://web-tolk.ru
+  ~ @author     Sergey Tolkachyov and Sergey Sergevnin
   ~ @copyright Copyright (c) 2025 Sergey Tolkachyov and Sergey Sergevnin. All rights reserved.
   ~ @license   GNU/GPL3 http://www.gnu.org/licenses/gpl-3.0.html
-  ~ @link      https://web-tolk.ru
+  ~ @link       https://web-tolk.ru
   -->
 
 <form>
@@ -20,12 +20,12 @@
             <field type="radio"
                    name="select_view"
                    label="PLG_WTSETELEMENTS_LISTVIEW_LABEL"
-                   description="Стандартный мультиселект - 3 строчки. Натыкиваем мышкой с контролом. Fancy select - как выбор тегов."
+                   description="PLG_WTSETELEMENTS_LISTVIEW_DESC"
                    default="standard"
                    class="btn-group"
-                   >
-                <option value="standard">Standard</option>
-                <option value="fancy_select">Fancy select</option>
+            >
+                <option value="standard">PLG_WTSETELEMENTS_LISTVIEW_STANDARD</option>
+                <option value="fancy_select">PLG_WTSETELEMENTS_LISTVIEW_FANCY_SELECT</option>
             </field>
         </fields>
         <field name="options" type="subform"
@@ -66,7 +66,7 @@
             </form>
         </field>
     </fieldset>
-    <fieldset name="display_products" label="11">
+    <fieldset name="display_products" label="COM_RADICALMART_PARAMS_FIELD_DISPLAY_PRODUCTS">
         <fields name="params">
             <field name="display_products" type="radio"
                    label="COM_RADICALMART_PARAMS_FIELD_DISPLAY_SELECT"
@@ -84,16 +84,19 @@
                     directory="layouts/plugins/radicalmart_fields/wtsetelements"
                     fileFilter="\.php$"
                     stripext="true"
+                    hide_none="true"
+                    hide_default="true"
             />
             <field
-                name="note1"
-                type="note"
-                label="PLG_WTSETELEMENTS_NOTE_LABEL"
-                description="PLG_WTSETELEMENTS_NOTE_DESC"
+                    name="display_products_as_note"
+                    type="note"
+                    class="alert alert-info"
+                    label="PLG_WTSETELEMENTS_DISPLAY_PRODUCTS_AS_NOTE_LABEL"
+                    description="PLG_WTSETELEMENTS_DISPLAY_PRODUCTS_AS_NOTE_DESC"
             />
         </fields>
     </fieldset>
-    <fieldset name="display_product" label="22">
+    <fieldset name="display_product" label="COM_RADICALMART_PARAMS_FIELD_DISPLAY_PRODUCT">
         <fields name="params">
             <field name="display_product" type="radio"
                    label="COM_RADICALMART_PARAMS_FIELD_DISPLAY_SELECT"
@@ -111,6 +114,8 @@
                     directory="layouts/plugins/radicalmart_fields/wtsetelements"
                     fileFilter="\.php$"
                     stripext="true"
+                    hide_none="true"
+                    hide_default="true"
             />
         </fields>
     </fieldset>

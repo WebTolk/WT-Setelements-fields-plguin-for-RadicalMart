@@ -1,21 +1,23 @@
 <?php
 /**
- * @package     WT JShopping Add order info to checkout finish
- * * @version     1.0.0
- * * @Author      Sergey Tolkachyov and Sergey Sergevnin, https://web-tolk.ru
- * * @copyright   Copyright (C) 2025 Sergey Tolkachyov and Sergey Sergevnin
- * * @license     GNU/GPL 3.0
- * * @link        https://web-tolk.ru
- * * @since       1.0.0
+ * @package       Fields - WT RadicalMart Fields Set Elements
+ * @version       1.0.0
+ * @Author        Sergey Tolkachyov, https://web-tolk.ru
+ * @copyright     Copyright (C) 2024 Sergey Tolkachyov
+ * @license       GNU/GPL http://www.gnu.org/licenses/gpl-3.0.html
+ * @since         1.0.0
  */
 
 namespace Joomla\Plugin\RadicalMartFields\Wtsetelements\Fields;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Field\NoteField;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Factory;
+
 use function defined;
+
 defined('_JEXEC') or die;
+
 class PlugininfoField extends NoteField
 {
 
@@ -35,13 +37,17 @@ class PlugininfoField extends NoteField
         $element = $data->get('element');
         $folder = $data->get('folder');
         $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
-        $wa->addInlineStyle("
+        $wa->addInlineStyle(
+            "
 			.plugin-info-img-svg:hover * {
 				cursor:pointer;
 			}
-		");
+		"
+        );
 
-        $wt_plugin_info = simplexml_load_file(JPATH_SITE . "/plugins/" . $folder . "/" . $element . "/" . $element . ".xml");
+        $wt_plugin_info = simplexml_load_file(
+            JPATH_SITE . "/plugins/" . $folder . "/" . $element . "/" . $element . ".xml"
+        );
 
 
         return $html = '<div class="d-flex shadow p-4 eee">
@@ -70,17 +76,6 @@ class PlugininfoField extends NoteField
     }
 
     /**
-     * @return  string  The field label markup.
-     *
-     * @since   1.7.0
-     */
-    protected function getLabel()
-    {
-
-        return '';
-    }
-
-    /**
      * Method to get the field title.
      *
      * @return  string  The field title.
@@ -90,5 +85,15 @@ class PlugininfoField extends NoteField
     protected function getTitle()
     {
         return $this->getLabel();
+    }
+
+    /**
+     * @return  string  The field label markup.
+     *
+     * @since   1.7.0
+     */
+    protected function getLabel()
+    {
+        return '';
     }
 }

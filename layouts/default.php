@@ -1,12 +1,11 @@
 <?php
-/*
- * @package     RadicalMart Fields Standard Plugin
- * @subpackage  plg_radicalmart_fields_standard
- * @version     1.2.5
- * @author      RadicalMart Team - radicalmart.ru
- * @copyright   Copyright (c) 2024 RadicalMart. All rights reserved.
- * @license     GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
- * @link        https://radicalmart.ru/
+/**
+ * @package       Fields - WT RadicalMart Fields Set Elements
+ * @version       1.0.0
+ * @Author        Sergey Tolkachyov, https://web-tolk.ru
+ * @copyright     Copyright (C) 2024 Sergey Tolkachyov
+ * @license       GNU/GPL http://www.gnu.org/licenses/gpl-3.0.html
+ * @since         1.0.0
  */
 
 use Joomla\CMS\HTML\HTMLHelper;
@@ -20,27 +19,33 @@ extract($displayData);
  * Layout variables
  * -----------------
  *
- * @var  object $field Field data object.
- * @var  array $values Field values.
+ * @var  object $field  Field data object.
+ * @var  array  $values Field values.
  *
  */
 ?>
 <ul class="list-unstyled">
-<?php
-foreach($field->options as $option) : ?>
-    <?php if(in_array($option['value'], $values)) : ?>
-          <li>
-            <?php
-                $src = $option['image'];
-                foreach ($values as $value):
+    <?php foreach ($field->options as $option) : ?>
+        <?php if (in_array($option['value'], $values)) : ?>
+            <li>
+                <?php
+                if(!empty($option['image'])) {
+                    $src = $option['image'];
                     $img_attribs = [
-                       'class' => 'img w-100 h-auto wtsetelements wtsetelements-image',
-                       ];
-                endforeach;
-                echo HTMLHelper::image($src, htmlspecialchars($option['text']), $img_attribs);
+                        'class' => 'wtsetelements wtsetelements-image',
+                        'title' => htmlspecialchars($option['text']),
+                    ];
+                    echo HTMLHelper::image($src, htmlspecialchars($option['text']), $img_attribs);
+                }
                 ?>
-                <span class="wtsetelements wtsetelements-header"><?php echo $option['text']; ?></span>
-                <span class="wtsetelements wtsetelements-desc"><?php echo $option['desctext']; ?></span>
-          </li>
-    <?php endif ?>
-<?php endforeach ?>
+                <?php if(!empty($option['text'])) :?>
+                    <span class="wtsetelements wtsetelements-header"><?php echo $option['text']; ?></span>
+                <?php endif; ?>
+
+                <?php if(!empty($option['desctext'])) :?>
+                    <span class="wtsetelements wtsetelements-desc"><?php echo $option['desctext']; ?></span>
+                <?php endif; ?>
+            </li>
+        <?php endif ?>
+    <?php endforeach ?>
+</ul>

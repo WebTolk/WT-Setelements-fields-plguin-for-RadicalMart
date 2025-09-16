@@ -1,10 +1,10 @@
 <?php
 /**
- * @package       Fields - WT RadicalMart Fields Set Elements
+ * @package    Fields - WT RadicalMart Fields Set Elements
  * @version       1.0.0
- * @Author        Sergey Tolkachyov and Sergey Sergevnin - https://web-tolk.ru
- * @copyright     Copyright (c) 2025 Sergey Tolkachyov and Sergey Sergevnin. All rights reserved.
- * @license       GNU/GPL3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @Author        Sergey Tolkachyov, https://web-tolk.ru
+ * @copyright     Copyright (C) 2024 Sergey Tolkachyov
+ * @license       GNU/GPL http://www.gnu.org/licenses/gpl-3.0.html
  * @since         1.0.0
  */
 
