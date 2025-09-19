@@ -24,7 +24,7 @@ extract($displayData);
  *
  */
 ?>
-<ul class="list-unstyled">
+<ul class="list-unstyled 22">
     <?php
     if (is_string($values)) {
         $values = [$values];
