@@ -25,7 +25,11 @@ extract($displayData);
  */
 ?>
 <ul class="list-unstyled">
-    <?php foreach ($field->options as $option) : ?>
+    <?php
+    if (is_string($values)) {
+        $values = [$values];
+    }
+    foreach ($field->options as $option) : ?>
         <?php if (in_array($option['value'], $values)) : ?>
             <li>
                 <?php
