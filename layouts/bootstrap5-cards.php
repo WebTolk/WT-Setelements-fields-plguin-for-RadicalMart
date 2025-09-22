@@ -1,7 +1,7 @@
 <?php
 /**
- * @package       Fields - WT RadicalMart Fields Set Elements
- * @version       1.0.0
+ * @package    Fields - WT RadicalMart Fields Set Elements
+ * @version       1.0.1
  * @Author        Sergey Tolkachyov, https://web-tolk.ru
  * @copyright     Copyright (C) 2024 Sergey Tolkachyov
  * @license       GNU/GPL http://www.gnu.org/licenses/gpl-3.0.html
@@ -24,13 +24,13 @@ extract($displayData);
  *
  */
 
+if (is_string($values)) {
+    $values = [$values];
+}
+
 ?>
 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-5 row-gap-3 row-gap-lg-4">
-    <?php
-    if (is_string($values)) {
-        $values = [$values];
-    }
-    foreach ($field->options as $option) : ?>
+    <?php foreach ($field->options as $option) : ?>
         <?php if (in_array($option['value'], $values)) : ?>
             <div class="col">
                 <div class="card h-100 border-0">
