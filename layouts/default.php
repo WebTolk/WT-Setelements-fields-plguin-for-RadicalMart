@@ -1,7 +1,7 @@
 <?php
 /**
- * @package       Fields - WT RadicalMart Fields Set Elements
- * @version       1.0.0
+ * @package    Fields - WT RadicalMart Fields Set Elements
+ * @version       1.0.1
  * @Author        Sergey Tolkachyov, https://web-tolk.ru
  * @copyright     Copyright (C) 2024 Sergey Tolkachyov
  * @license       GNU/GPL http://www.gnu.org/licenses/gpl-3.0.html
@@ -23,13 +23,14 @@ extract($displayData);
  * @var  array  $values Field values.
  *
  */
+
+if (is_string($values)) {
+    $values = [$values];
+}
+
 ?>
 <ul class="list-unstyled">
-    <?php
-    if (is_string($values)) {
-        $values = [$values];
-    }
-    foreach ($field->options as $option) : ?>
+    <?php foreach ($field->options as $option) : ?>
         <?php if (in_array($option['value'], $values)) : ?>
             <li>
                 <?php
